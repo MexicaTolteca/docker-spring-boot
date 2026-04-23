@@ -14,6 +14,8 @@ WORKDIR /opt/app
 COPY ${JAR_FILE} spring-boot-web.jar
 
 # java -jar /opt/app/app.jar
+# ENTRYPOINT ["java","-jar","spring-boot-web.jar"]
+COPY target/spring-boot-web.jar spring-boot-web.jar
 ENTRYPOINT ["java","-jar","spring-boot-web.jar"]
 
 ## sudo docker run -p 8080:8080 -t docker-spring-boot:1.0
